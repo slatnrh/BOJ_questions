@@ -12,6 +12,7 @@ void GCD_AND_LCM(int num1, int num2){
     printf("%d\n", lcm);
 }
 
+
 int main() {
     int num1, num2;
     scanf("%d %d", &num1, &num2);

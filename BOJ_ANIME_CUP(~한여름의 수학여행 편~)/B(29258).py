@@ -2,8 +2,8 @@ T = int(input())
 
 for _ in range(T):
     N, M = map(int, input().split())
+    
     i = 0
-
     while True:
         if N % 2 == 0 and 2 * M >= N:
             i += N // 2

@@ -10,6 +10,7 @@ def sol(n):
     else:
         return sol(n - 1) + sol(n - 2) + sol(n - 3)
 
+
 for i in range(T):
     n = int(input())
     print(sol(n))

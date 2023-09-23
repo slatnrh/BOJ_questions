@@ -9,7 +9,6 @@ int main() {
         scanf("%d %d", &N, &M);
 
         int i = 0;
-
         while (1) {
             if (N % 2 == 0 && 2 * M >= N) {
                 i += N / 2;

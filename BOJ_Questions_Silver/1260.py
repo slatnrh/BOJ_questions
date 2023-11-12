@@ -1,5 +1,6 @@
 from collections import deque
 
+# dfs
 def dfs(start):
     visited[start] = True
     print(start, end=" ")
@@ -8,6 +9,7 @@ def dfs(start):
         if not visited[i]:
             dfs(i)
 
+# bfs
 def bfs(start):
     queue = deque([start])
     visited[start] = True
@@ -25,6 +27,7 @@ graph = [[] for _ in range(N+1)]
 
 for _ in range(M):
     a, b = map(int, input().split())
+    # a - b 연결
     graph[a].append(b)
     graph[b].append(a)
 

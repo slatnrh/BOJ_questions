@@ -3,28 +3,34 @@ import heapq, sys
 input = sys.stdin.readline
 
 N = int(input())
+# 양수끼리 모아놓은 배열
 plus_heap = []
+# 음수끼리 모아놓은 배열
 minus_heap = []
 for _ in range(N):
     x = int(input())
-    # 0을 입력받았을 때 heap에 최댓값 출력
-    # 0이 아닌 자연수를 입력받았을 때 heap에 저장, 최솟값을 출력하기 위해 -value로 저장
+
     if x != 0:
         if x > 0:
             heapq.heappush(plus_heap, x)
         else:
+            # heap은 기본적으로 정렬을 하기 때문에 음수들을 양수로 저장하기 위해 -를 붙여 append
             heapq.heappush(minus_heap, -x)
     else:
-        # 기본적으로 heappop은 최솟값을 출력하기에 -value로 저장 후 출력을 -(-value)로 해야됨
         if plus_heap:
             if minus_heap:
+                # 절댓값이 양수[0]이 더 작을 경우
                 if plus_heap[0] < minus_heap[0]:
                     print(heapq.heappop(plus_heap))
+                # 절댓값이 음수[0]이 더 작을 경우
                 else:
                     print(-heapq.heappop(minus_heap))
+            # 음수가 없을 경우
             else:
                 print(heapq.heappop(plus_heap))
+        # 양수가 없을 경우
         elif minus_heap:
             print(-heapq.heappop(minus_heap))
+        # 아무런 수가 없을 경우
         else:
             print('0')

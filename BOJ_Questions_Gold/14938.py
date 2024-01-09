@@ -43,5 +43,4 @@ for start in range(1, n + 1):
             temp += t[i]
     if temp > result:
         result = temp
-
 print(result)
